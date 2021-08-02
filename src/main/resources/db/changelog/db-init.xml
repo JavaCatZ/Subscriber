@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="Bogdan Chervonyaschiy" id="30-07-2021-01-create_purchase_msg_table">
+        <createTable schemaName="messages" tableName="purchase_message">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="msisdn" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timestamp" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Bogdan Chervonyaschiy" id="30-07-2021-02-create_subscription_msg_table">
+        <createTable schemaName="messages" tableName="subscription_message">
+            <column name="id" type="BIGINT">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="msisdn" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="action" type="VARCHAR(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="timestamp" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
